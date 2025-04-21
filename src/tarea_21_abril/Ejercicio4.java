@@ -1,28 +1,31 @@
 package tarea_21_abril;
-import java.util.Random;
 
 public class Ejercicio4 {
+    
+    /* Ejercicio 4: Uso de wait() y notify()
+    Crea un programa donde un hilo productor genera números aleatorios y un hilo consumidor los imprime. 
+    El consumidor debe esperar si no hay números disponibles.*/
     public static void main(String[] args) {
-        hola buffer = new hola();
+        hola holi = new hola();
 
         Thread productor = new Thread(() -> {
             for (int i = 0; i < 5; i++) {
-                buffer.producir();
+                holi.producir();
                 try {
-                    Thread.sleep(1000); // Simula tiempo de producción
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.sleep(1000);
+                } catch (InterruptedException ee54) {
+                    ee54.printStackTrace();
                 }
             }
         });
 
         Thread consumidor = new Thread(() -> {
             for (int i = 0; i < 5; i++) {
-                buffer.consumir();
+                holi.consumir();
                 try {
-                    Thread.sleep(1500); // Simula tiempo de consumo
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.sleep(1500); 
+                } catch (InterruptedException e2e) {
+                    e2e.printStackTrace();
                 }
             }
         });
